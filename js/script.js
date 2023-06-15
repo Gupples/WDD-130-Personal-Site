@@ -199,4 +199,12 @@ const allTypes = {
         Icon: "images/fairy.png"
     }
 }
-    
+// Detect selected type
+
+// Insert info into chart
+    // image
+
+    // offense
+
+    // defense
+
