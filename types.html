@@ -18,37 +18,72 @@
                 <a href="types.html">Type Tool</a>
             </nav>        
         </header>
-        <p>Hello, everyone</p>
-        <img src="https://placehold.co/600x400/png" alt="placeholder">
-        <p>This should be working. Why is it not?</p>
-        <div id="select-type">
-            <label for="types">Select type: </label>
-            <select name="types" id="types">
-                <option value="normal">Normal</option>
-                <option value="fire">Fire</option>
-                <option value="water">Water</option>
-                <option value="electric">Electric</option>
-                <option value="grass">Grass</option>
-                <option value="ice">Ice</option>
-                <option value="fighting">Fighting</option>
-                <option value="poison">Poison</option>
-                <option value="ground">Ground</option>
-                <option value="flying">Flying</option>
-                <option value="psychic">Psychic</option>
-                <option value="bug">Bug</option>
-                <option value="rock">Rock</option>
-                <option value="ghost">Ghost</option>
-                <option value="dragon">Dragon</option>
-                <option value="dark">Dark</option>
-                <option value="steel">Steel</option>
-                <option value="fairy">Fairy</option>
-            </select>
-        </div>
-        <button type="submit">Submit</button>
+        <main>
+            <div id="tutorial">
+                <div id="instructions">
+                    <h2 id="title">Pokémon Type Chart</h2>
+                    <p>This tool will break down the weaknesses, strengths, and other 
+                        interactions between all the different pokémon types. Simply
+                        select the type you want to learn about from the dropbox and
+                        push the "Submit" button. The graph on the right will automatically
+                        tell you the different interactions it has with the other types. <br>
+                        Key;
+                        <ul>
+                            <li>Strengths - What types are weak against this type</li>
+                            <li>Ineffective - What types resist this type</li>
+                            <li>Futilities - What types are completely immune to this type</li>
+                            <li>Weaknesses - What types this type is weak to</li>
+                            <li>Resistances - What types aren't very effective against this type</li>
+                            <li>Immunities - What types this type are immune to</li>
+                        </ul>
+                    </p>
+                </div> <!--end #instructions-->
+                <div id="select-type">
+                    <label for="types">Select type: </label>
+                    <select name="types" id="types">
+                        <option value="normal">Normal</option>
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                        <option value="electric">Electric</option>
+                        <option value="grass">Grass</option>
+                        <option value="ice">Ice</option>
+                        <option value="fighting">Fighting</option>
+                        <option value="poison">Poison</option>
+                        <option value="ground">Ground</option>
+                        <option value="flying">Flying</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="bug">Bug</option>
+                        <option value="rock">Rock</option>
+                        <option value="ghost">Ghost</option>
+                        <option value="dragon">Dragon</option>
+                        <option value="dark">Dark</option>
+                        <option value="steel">Steel</option>
+                        <option value="fairy">Fairy</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </div> <!--end #select-type#-->
+            </div> <!--end #tutorial-->
+            <div id="tool">
+                <div id="type-name"></div>
+                <div id="strengths-label">Strengths</div>
+                <div id="strengths"></div>
+                <div id="ineffective-label">Innefective</div>
+                <div id="innefective"></div>
+                <div id="futilities-lable">Futilities</div>
+                <div id="futilities"></div>
+                <div id="weaknesses-label">Weaknesses</div>
+                <div id="weaknesses"></div>
+                <div id="resistances-label">Resistances</div>
+                <div id="resistances"></div>
+                <div id="immunities-label">Immunities</div>
+                <div id="immunities"></div>
+            </div> <!--end #tool-->
+            <img src="images/tool-placeholder.JPG" alt="Placeholder until the tool works">
+        </main>
         <footer>
             <p>Pokéstart &copy; 2023 - Jared Davey</p>
             <a href="site-plan.html">Site Plan</a>
         </footer>
-    </div>
+    </div> <!--end #content-->
 </body>
 </html>
