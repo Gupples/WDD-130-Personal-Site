@@ -1,6 +1,15 @@
 const chart = document.getElementById("chart")
-const allTypes = {
-    normal: {
+const typeName = document.getElementById("type-name")
+const strengths = document.getElementById("strengths")
+const innefective = document.getElementById("innefective")
+const futilities = document.getElementById("futilities")
+const weaknesses = document.getElementById("weaknesses")
+const resistances = document.getElementById("resistances")
+const immunities = document.getElementById("immunities")
+
+const allTypes = [
+    {
+        Type: "Normal",
         // Offense
         Strengths: [],
         Inefficiencies: ["Rock", "Steel"],
@@ -11,7 +20,8 @@ const allTypes = {
         Immunities: ["Ghost"],
         Icon: "images/normal.png"
     },
-    fire: {
+    {
+        Type: "Fire",
         // Offense
         Strengths: ["Grass", "Ice", "Bug", "Steel"],
         Inefficiencies: ["Fire", "Water", "Rock", "Dragon"],
@@ -22,7 +32,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/fire.png"
     },
-    water: {
+    {
+        Type: "Water",
         // Offense
         Strengths: ["Fire", "Ground", "Rock"],
         Inefficiencies: ["Water", "Grass", "Dragon"],
@@ -33,7 +44,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/water.png"
     },
-    electric: {
+    {
+        Type: "Electric",
         // Offense
         Strengths: ["Water", "Flying"],
         Inefficiencies: ["Electric", "Grass", "Dragon"],
@@ -44,7 +56,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/electric.png"
     },
-    grass: {
+    {
+        Type: "Grass",
         // Offense
         Strengths: ["Water", "Ground", "Rock"],
         Inefficiencies: ["Fire", "Grass", "Poison", "Flying", "Bug", "Dragon", "Steel"],
@@ -55,7 +68,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/grass.png"
     },
-    ice: {
+    {
+        Type: "Ice",
         // Offense
         Strengths: ["Grass", "Ground", "Flying", "Dragon"],
         Inefficiencies: ["Fire", "Water", "Ice", "Steel"],
@@ -66,7 +80,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/ice.png"
     },
-    fighting: {
+    {
+        Type: "Fighting",
         // Offense
         Strengths: ["Normal", "Ice", "Rock", "Dark", "Steel"],
         Inefficiencies: ["Poison", "Flying", "Psychic", "Bug", "Fairy"],
@@ -77,7 +92,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/fighting.png"
     },
-    poison: {
+    {
+        Type: "Poison",
         // Offense
         Strengths: ["Grass", "Fairy"],
         Inefficiencies: ["Poison", "Ground", "Rock", "Ghost"],
@@ -88,7 +104,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/poison.png"
     },
-    ground: {
+    {
+        Type: "Ground",
         // Offense
         Strengths: ["Fire", "Electric", "Poison", "Rock", "Steel"],
         Inefficiencies: ["Grass", "Bug"],
@@ -99,7 +116,8 @@ const allTypes = {
         Immunities: ["Electric"],
         Icon: "images/ground.png"
     },
-    flying: {
+    {
+        Type: "Flying",
         // Offense
         Strengths: ["Grass", "Fighting", "Bug"],
         Inefficiencies: ["Electric", "Rock", "Steel"],
@@ -110,7 +128,8 @@ const allTypes = {
         Immunities: ["Ground"],
         Icon: "images/flying.png"
     },
-    psychic: {
+    {
+        Type: "Psychic",
         //Offense
         Strengths: ["Fighting", "Poison"],
         Inefficiencies: ["Psychic", "Steel"],
@@ -121,7 +140,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/psychic.png"
     },
-    bug: {
+    {
+        Type: "Bug",
         //Offense
         Strengths: ["Grass", "Psychic", "Dark"],
         Inefficiencies: ["Fire", "Fighting", "Poison", "Flying", "Ghost", "Steel", "Fairy"],
@@ -132,7 +152,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/bug.png"
     },
-    rock: {
+    {
+        Type: "Rock",
         //Offense
         Strengths: ["Fire", "Ice", "Flying", "Bug"],
         Inefficiencies: ["Fighting", "Ground", "Steel"],
@@ -143,7 +164,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/rock.png"
     },
-    ghost: {
+    {
+        Type: "Ghost",
         //Offense
         Strengths: ["Psychic", "Ghost"],
         Inefficiencies: ["Dark"],
@@ -154,7 +176,8 @@ const allTypes = {
         Immunities: ["Normal", "Fighting"],
         Icon: "images/ghost.png"
     },
-    dragon: {
+    {
+        Type: "Dragon",
         //Offense
         Strengths: ["Dragon"],
         Inefficiencies: ["Steel"],
@@ -165,7 +188,8 @@ const allTypes = {
         Immunities: [],
         Icon: "images/dragon.png"
     },
-    dark: {
+    {
+        Type: "Dark",
         //Offense
         Strengths: ["Psychic", "Ghost"],
         Inefficiencies: ["Fighting", "Dark", "Fairy"],
@@ -176,7 +200,8 @@ const allTypes = {
         Immunities: ["Psychic"],
         Icon: "images/dark.png"
     },
-    steel: {
+    {
+        Type: "Steel",
         //Offense
         Strengths: ["Ice", "Rock", "Fairy"],
         Inefficiencies: ["Fire", "Water", "Electric", "Steel"],
@@ -187,7 +212,8 @@ const allTypes = {
         Immunities: ["Poison"],
         Icon: "images/steel.png"
     },
-    fairy: {
+    {
+        Type: "Fairy",
         //Offense
         Strengths: ["Fighting", "Dragon", "Dark"],
         Inefficiencies: ["Fire", "Poison", "Steel"],
@@ -198,13 +224,45 @@ const allTypes = {
         Immunities: ["Dragon"],
         Icon: "images/fairy.png"
     }
-}
+]
 // Detect selected type
+function getType(){
+    let type = document.getElementById("types");
+    return type
+}
 
-// Insert info into chart
-    // image
+// clear the current type chart
+function clear() {
+    typeName.innerHTML = "";
+    strengths.innerHTML = "";
+    innefective.innerHTML = "";
+    futilities.innerHTML = "";
+    weaknesses.innerHTML = "";
+    resistances.innerHTML = "";
+    immunities.innerHTML = "";
+}
 
-    // offense
+// fill the type chart with the info
+function fillTable(tn) {
+    // fill in type name
+    typeName.innerHTML = `${tn}`;
+    // fill in type strengths
+    let strengthString = "<ul>";
+    let tempArray = allTypes.find(t => {return t.Type === `${tn}`});
+    let stngStr = tempArray.Strengths.map(function (step) {
+        return `<li>${step}</li>`;
+    });
+    debugger;
+    strengthString += stngStr.join("");
+    strengthString += "</ul>"; 
+    strengths.innerHTML = strengthString;
+}
 
-    // defense
 
+function generate() {
+    clear();
+    fillTable(types.value);
+
+}
+
+document.getElementById("submit").addEventListener("click", generate);
