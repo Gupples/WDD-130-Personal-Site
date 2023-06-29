@@ -52,6 +52,6 @@ nav a:visited{
 
 #logo_link {
     padding: 5px;
-    justify-self: center;
-    align-self: center;
+    display: flex;
+    align-content: stretch;
 }
