@@ -327,6 +327,7 @@ function generate() {
     fillWeaknesses(type);
     fillResistances(type);
     fillImmunities(type);
+    document.getElementById('types').value = 'Select';
 }
 
 document.getElementById("submit").addEventListener("click", generate);
