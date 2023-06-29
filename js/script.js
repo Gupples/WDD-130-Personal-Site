@@ -317,7 +317,6 @@ function fillImmunities(tn) {
     immunities.innerHTML = colString;
 }
 
-
 function generate() {
     clear();
     let type = types.value;
