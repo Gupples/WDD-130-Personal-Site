@@ -109,6 +109,15 @@ footer {
     text-align: center;
     background-color: var(--my-brown);
     color: var(--my-yellow);
+    max-height: 3em;
+}
+
+footer p {
+    display: flex;
+    padding: 1em 0;
+    text-align: center;
+    margin: 0 auto 0 15px;
+    align-self: left;
 }
 
 footer a{
@@ -117,7 +126,8 @@ footer a{
     margin: auto;
     text-align: center;
     height: 100%;
-    padding: 2em;
+    padding: 1em;
+    font-family: var(--heading-font);
 }
 
 footer a:hover {
