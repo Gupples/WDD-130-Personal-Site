@@ -29,7 +29,7 @@ body {
 
 nav{
     background-color: var(--my-brown);
-    columns: var(--my-yellow);
+    color: var(--my-yellow);
     display: flex;
     justify-content: space-around;
     line-height: 1em;
@@ -125,9 +125,7 @@ footer p {
     display: flex;
     padding: 1em 0;
     text-align: center;
-    margin: 0 auto 0 15px;
-    align-self: left;
-}
+    margin: 0 auto 0 15px;}
 
 footer a{
     text-align: left;
