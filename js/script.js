@@ -1,7 +1,7 @@
 const chart = document.getElementById("chart")
 const typeName = document.getElementById("type-name")
 const strengths = document.getElementById("strengths")
-const innefective = document.getElementById("innefective")
+const inefective = document.getElementById("ineffective")
 const futilities = document.getElementById("futilities")
 const weaknesses = document.getElementById("weaknesses")
 const resistances = document.getElementById("resistances")
@@ -235,7 +235,7 @@ function getType(){
 function clear() {
     typeName.innerHTML = "";
     strengths.innerHTML = "";
-    innefective.innerHTML = "";
+    inefective.innerHTML = "";
     futilities.innerHTML = "";
     weaknesses.innerHTML = "";
     resistances.innerHTML = "";
@@ -245,75 +245,103 @@ function clear() {
 // fill the type chart with the info
 function fillStrengths(tn) {
     // fill in type strengths
-    let colString = "<ul>";
+    // let colString = "<ul>";
     let tempArray = allTypes.find(t => {return t.Type === `${tn}`});
-    let colStr = tempArray.Strengths.map(function (step) {
-        return `<li>${step}</li>`;
-    });
+    // let colStr = tempArray.Strengths.map(function (step) {
+    //     return `<li>${step}</li>`;
+    // });
     
-    colString += colStr.join("");
-    colString += "</ul>"; 
+    // colString += colStr.join("");
+    // colString += "</ul>"; 
+    let colStr = tempArray.Strengths.map(function (step) {
+        return `${step}<br>`;
+    })
+    let colString = colStr.join("");
     strengths.innerHTML = colString;
 }
 
 function fillIneffective(tn) {
-    // fill in type strengths
-    let colString = "<ul>";
+    // fill in type ineffectiveness
+    // let colString = "<ul>";
     let tempArray = allTypes.find(t => {return t.Type === `${tn}`});
-    let colStr = tempArray.Inefficiencies.map(function (step) {
-        return `<li>${step}</li>`;
-    });
+    // let colStr = tempArray.Inefficiencies.map(function (step) {
+    //     return `<li>${step}</li>`;
+    // });
     
-    colString += colStr.join("");
-    colString += "</ul>"; 
-    innefective.innerHTML = colString;
+    // colString += colStr.join("");
+    // colString += "</ul>"; 
+    let colStr = tempArray.Inefficiencies.map(function (step) {
+        return `${step}<br>`;
+    })
+    let colString = colStr.join("");
+    inefective.innerHTML = colString;
 }
 
 function fillFutilities(tn) {
-    // fill in type strengths
-    let colString = "<ul>";
+    // fill in type futilities
+    // let colString = "<ul>";
     let tempArray = allTypes.find(t => {return t.Type === `${tn}`});
+    // let colStr = tempArray.Futilities.map(function (step) {
+    //     return `<li>${step}</li>`;
+    // });
+    
+    // colString += colStr.join("");
+    // colString += "</ul>"; 
     let colStr = tempArray.Futilities.map(function (step) {
-        return `<li>${step}</li>`;
-    });
-    colString += colStr.join("");
-    colString += "</ul>"; 
+        return `${step}<br>`;
+    })
+    let colString = colStr.join("");
     futilities.innerHTML = colString;
 }
 
 function fillWeaknesses(tn) {
-    // fill in type strengths
-    let colString = "<ul>";
+    // fill in type weaknesses
+    // let colString = "<ul>";
     let tempArray = allTypes.find(t => {return t.Type === `${tn}`});
+    // let colStr = tempArray.Weaknesses.map(function (step) {
+    //     return `<li>${step}</li>`;
+    // });
+    
+    // colString += colStr.join("");
+    // colString += "</ul>"; 
     let colStr = tempArray.Weaknesses.map(function (step) {
-        return `<li>${step}</li>`;
-    });
-    colString += colStr.join("");
-    colString += "</ul>"; 
+        return `${step}<br>`;
+    })
+    let colString = colStr.join("");
     weaknesses.innerHTML = colString;
 }
 
 function fillResistances(tn) {
-    // fill in type strengths
-    let colString = "<ul>";
+    // fill in type resistances
+    // let colString = "<ul>";
     let tempArray = allTypes.find(t => {return t.Type === `${tn}`});
+    // let colStr = tempArray.Resistances.map(function (step) {
+    //     return `<li>${step}</li>`;
+    // });
+    
+    // colString += colStr.join("");
+    // colString += "</ul>"; 
     let colStr = tempArray.Resistances.map(function (step) {
-        return `<li>${step}</li>`;
-    });
-    colString += colStr.join("");
-    colString += "</ul>"; 
+        return `${step}<br>`;
+    })
+    let colString = colStr.join("");
     resistances.innerHTML = colString;
 }
 
 function fillImmunities(tn) {
-    // fill in type strengths
-    let colString = "<ul>";
+    // fill in type immunities
+    // let colString = "<ul>";
     let tempArray = allTypes.find(t => {return t.Type === `${tn}`});
+    // let colStr = tempArray.Immunities.map(function (step) {
+    //     return `<li>${step}</li>`;
+    // });
+    
+    // colString += colStr.join("");
+    // colString += "</ul>"; 
     let colStr = tempArray.Immunities.map(function (step) {
-        return `<li>${step}</li>`;
-    });
-    colString += colStr.join("");
-    colString += "</ul>"; 
+        return `${step}<br>`;
+    })
+    let colString = colStr.join("");
     immunities.innerHTML = colString;
 }
 
