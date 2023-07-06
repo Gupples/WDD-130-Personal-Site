@@ -105,36 +105,66 @@ p{
     grid-column: 1/3;
 }
 
+#key {
+    width: 90%;
+    text-align: left;
+    font-family: var(--paragraph-font);
+}
+#key h4{
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: normal;
+}
+
+#select-type {
+    font-family: var(--paragraph-font);
+}
+
 #tool {
     grid-column: 2/3;
     grid-row: 2/3;
     display: grid;
     grid-template-columns: repeat(6, 16.6%);
     grid-template-rows: 3em 2em 1fr;
-    border: 2px solid var(--my-black);
     border-collapse: collapse;
-    
 }
+
+/* .cell {
+    width: 80px;
+    margin: 0 auto;
+    padding: 0;
+
+} */
 
 #type-name {
     grid-column: 1/7;
     font-size: 2em;
+    border-top: 4px solid var(--my-black);
+    border-left: 4px solid var(--my-black);
+    border-right: 4px solid var(--my-black);
+    border-bottom: 2px solid var(--my-black);
 }
 
 #strengths-label, #futilities-label, 
 #resistances-label, #ineffective-label,
  #weaknesses-label, #immunities-label{
-    border-top: 2px solid var(--my-black);
-    border-right: 2px solid var(--my-black);
-    border-bottom: 2px solid var(--my-black);
-    border-left: 1px solid var(--my-black);
+    border: 2px solid var(--my-black);
     border-collapse: collapse;
     font-size: .9em;
 }
 
 #strengths, #ineffective, #futilities,
 #weaknesses, #resistances, #immunities{
-    border-right: 2px solid var(--my-black);
+    border: 2px solid var(--my-black);
+    border-bottom: 4px solid var(--my-black);
+}
+
+#strengths-label, #strengths {
+    border-left: 4px solid var(--my-black);
+}
+
+#immunities-label, #immunities {
+    border-right: 4px solid var(--my-black);
 }
 
 footer {
