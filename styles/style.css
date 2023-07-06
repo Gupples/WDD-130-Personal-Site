@@ -45,6 +45,7 @@ nav a {
     height: 100%;
     text-decoration: none;
     padding: 1.5em;
+    color: var(--my-yellow);
 }
 
 nav a:hover {
@@ -194,4 +195,8 @@ footer a{
 footer a:hover {
     background-color: var(--my-red);
     color: var(--my-black);
+}
+
+footer a:visited {
+    color: var(--my-yellow);
 }
