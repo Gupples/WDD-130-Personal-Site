@@ -107,7 +107,8 @@ p{
 }
 
 #key {
-    width: 90%;
+    width: 80%;
+    padding-left: 30px;
     text-align: left;
     font-family: var(--paragraph-font);
 }
@@ -115,6 +116,7 @@ p{
     text-align: center;
     padding-bottom: 10px;
     font-weight: normal;
+    width: ;
 }
 
 #select-type {
