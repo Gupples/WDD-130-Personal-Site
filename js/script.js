@@ -348,7 +348,12 @@ function fillImmunities(tn) {
 function generate() {
     clear();
     let type = types.value;
-    typeName.innerHTML = `${type}`;
+    if (type == "Select") {
+        typeName.innerHTML = "Type Name";
+    }
+    else {
+        typeName.innerHTML = `${type}`;
+    }
     fillStrengths(type);
     fillIneffective(type);
     fillFutilities(type);
