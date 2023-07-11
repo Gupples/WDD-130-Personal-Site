@@ -127,8 +127,9 @@ p{
     grid-row: 2/3;
     display: grid;
     grid-template-columns: repeat(6, 16.6%);
-    grid-template-rows: 3em 2em 1fr;
+    grid-template-rows: 3em 2em 3fr 2fr;
     border-collapse: collapse;
+    padding-right: 40px;
 }
 
 /* .cell {
@@ -167,6 +168,14 @@ p{
 
 #immunities-label, #immunities {
     border-right: 4px solid var(--my-black);
+}
+
+#picture{
+    border-left: 4px solid var(--my-black);
+    border-right: 4px solid var(--my-black);
+    border-bottom: 4px solid var(--my-black);
+    grid-column: 1/7;
+    margin-bottom: 30px;
 }
 
 footer {
