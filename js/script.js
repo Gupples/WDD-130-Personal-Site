@@ -348,6 +348,9 @@ function fillImmunities(tn) {
 }
 
 function fillPicture(tn) {
+    if (tn == "Select") {
+        picture.innerHTML = `<img src="images/" alt="">`;
+    }
     let tempArray = allTypes.find(t => {return t.Type === `${tn}`});
     let tempIcon = tempArray.Icon;
     let tempString = `<img src="${tempIcon}" alt="${tn} Type Icon">`;
