@@ -6,6 +6,7 @@ const futilities = document.getElementById("futilities")
 const weaknesses = document.getElementById("weaknesses")
 const resistances = document.getElementById("resistances")
 const immunities = document.getElementById("immunities")
+const picture = document.getElementById("picture")
 
 const allTypes = [
     {
@@ -240,6 +241,7 @@ function clear() {
     weaknesses.innerHTML = "";
     resistances.innerHTML = "";
     immunities.innerHTML = "";
+    picture.innerHTML = "";
 }
 
 // fill the type chart with the info
@@ -345,6 +347,13 @@ function fillImmunities(tn) {
     immunities.innerHTML = colString;
 }
 
+function fillPicture(tn) {
+    let tempArray = allTypes.find(t => {return t.Type === `${tn}`});
+    let tempIcon = tempArray.Icon;
+    let tempString = `<img src="${tempIcon}" alt="${tn} Type Icon">`;
+    picture.innerHTML = tempString;
+}
+
 function generate() {
     clear();
     let type = types.value;
@@ -360,6 +369,7 @@ function generate() {
     fillWeaknesses(type);
     fillResistances(type);
     fillImmunities(type);
+    fillPicture(type);
     document.getElementById('types').value = 'Select';
 }
 
