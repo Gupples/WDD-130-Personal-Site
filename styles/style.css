@@ -97,7 +97,7 @@ p{
 #grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 4em 450px;
+    grid-template-rows: 4em 2fr 1fr;
     height: 100%;
 }
 
